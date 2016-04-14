@@ -10,7 +10,7 @@ package bettyslots;
  * @author Michael Woodward
  */
 
-public enum Symbols {
+public enum Symbol {
   WILD,      // wild symbol
   LEVEL_A_1, // top group
   LEVEL_A_2, // 
@@ -21,4 +21,4 @@ public enum Symbols {
   LEVEL_C_1, // bottom group
   LEVEL_C_2, // 
   LEVEL_C_3, // 
-} // end public enum Symbols
+} // end public enum Symbol

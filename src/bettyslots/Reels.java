@@ -25,8 +25,22 @@ public class Reels {
     rand              = new Random(System.nanoTime());
   } // end public Reels
   
-  public ArrayList[] spin () {
-    return null;
-  } // end public ArrayList[] spin
+  public ArrayList<ArrayList> spin () {
+    ArrayList<ArrayList> output = new ArrayList<>();
+    
+    // add the new arrays
+    for (int reelIndx = 0; reelIndx < numOfReels; reelIndx++) {
+      // create the first reel
+      ArrayList<Symbol> curReel = new ArrayList<>();
+      
+      // add a bunch of turns
+      
+      
+      // add to the output
+      output.add(curReel);
+    } // end for (int reelIndx = 0; reelIndx < numOfReels; reelIndx++)
+    
+    return output;
+  } // end public ArrayList<ArrayList> spin
   
 } // end public class Reels
