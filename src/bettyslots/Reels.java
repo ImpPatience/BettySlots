@@ -29,22 +29,29 @@ public class Reels {
   
   public ArrayList<ArrayList<Symbol>> spin () {
 
-                                       // the output
+    // the output
     ArrayList<ArrayList<Symbol>> output = new ArrayList<>();
-                                       // how many turns each reel will turn
-    int                  turns  = rand.nextInt(heightOfReel*heightOfReel);
-                         turns  = turns * reelSize;
 
-                                       // add the new arrays
+    output = spinFiller(output);
+    
+    return output;
+  } // end public ArrayList<ArrayList<Symbol>> spin
+  
+  private ArrayList<ArrayList<Symbol>> spinFiller (ArrayList<ArrayList<Symbol>> output) {
+    // how many turns each reel will turn
+    int turns  = rand.nextInt(heightOfReel*heightOfReel) * reelSize;
+
+    // add the new arrays
     for (int reelIndx = 0; reelIndx < numOfReels; reelIndx++) {
-                                       // create the first reel
+      // create the first reel
       ArrayList<Symbol> curReel = new ArrayList<>();
-      if (reelIndx > 0) {              // update the turns so progressively more
+      // update the turns so progressively more
+      if (reelIndx > 0) {
         turns += reelSize * rand.nextInt(heightOfReel);
         turns += (int) (reelSize * rand.nextDouble());
       } // end if (reelIndx > 0)
             
-                                       // add a bunch of symbols to the reel
+      // add a bunch of symbols to the reel
       for (int x = 0; x < turns; x++) {
         curReel.add(Symbol.values()[rand.nextInt(Symbol.values().length)]);        
       } // end for (int x = 0; x < turns; x++)
@@ -53,7 +60,7 @@ public class Reels {
       output.add(curReel);
     } // end for (int reelIndx = 0; reelIndx < numOfReels; reelIndx++)
     
-    return output;
-  } // end public ArrayList<ArrayList<Symbol>> spin
+    return output;    
+  } // end private ArrayList<ArrayList<Symbol>> spinFiller ...
   
 } // end public class Reels
